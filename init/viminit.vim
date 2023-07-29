@@ -7,6 +7,7 @@ set nopaste
 set display=lastline
 set nohlsearch
 set nocompatible
+set noswapfile
 
 if exists("did_load_filetypes")
   finish
