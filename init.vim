@@ -16,6 +16,7 @@ endif
 command! -nargs=1 IncScript exec 'so '. fnameescape(s:home."/<args>")
 
 IncScript init/viminit.vim
+IncScript init/check_plug.vim
 IncScript init/plug.vim
 IncScript init/status.vim
 IncScript init/ignore.vim
