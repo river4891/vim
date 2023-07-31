@@ -10,5 +10,6 @@ Plug 'skywind3000/asynctasks.vim', {'on': 'AsyncTask'}
 Plug 'skywind3000/asyncrun.vim', {'on': 'AsyncRun'}
 Plug 'nine2/vim-copyright'
 Plug 'yegappan/lsp'
+Plug 'yegappan/mru'
 
 call plug#end()
