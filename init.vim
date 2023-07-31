@@ -23,3 +23,4 @@ IncScript init/ignore.vim
 IncScript plugin/vifm.vim
 IncScript plugin/undotree.vim
 IncScript plugin/vim-copyright.vim
+IncScript plugin/lsp.vim
