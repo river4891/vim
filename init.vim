@@ -24,3 +24,4 @@ IncScript plugin/vifm.vim
 IncScript plugin/undotree.vim
 IncScript plugin/vim-copyright.vim
 IncScript plugin/lsp.vim
+IncScript plugin/MRU.vim

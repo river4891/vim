@@ -4,12 +4,12 @@
 "   Author        : tower_town
 "   Email         : tower_town@outlook.com
 "   File Name     : lsp.vim
-"   Last Modified : 2023-07-31 17:52
+"   Last Modified : 2023-07-31 18:57
 "   Describe      : 
 "
 " ====================================================
 
-if has('linux')
+if has('linux') && exists('LspAddServer')
 let lspServers = [#{
 	\	  name: 'clang',
 	\	  filetype: ['c', 'cpp'],
