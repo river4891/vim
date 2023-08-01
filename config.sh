@@ -8,6 +8,9 @@ apk add \
 		clang16-extra-tools
 # clangd
 apk add python3 py3-pip
+# pip conf
+pip install --upgrade pip
+pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
 pip install clangd
 }
 
@@ -21,9 +24,15 @@ apk add \
 
 fish_config(){
 apk add \
-	fish
+	fish \
+	shadow
+# chsh -- /usr/bin/fish
+fish
 ohmyfish="https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install"
 curl "$ohmyfish" | fish
 omf install ays
+
+apk add zoxide
+echo 'zoxide init fish | source' >> ~/.config/fish/config.d/z.fish
 }
 
