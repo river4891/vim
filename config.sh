@@ -29,7 +29,7 @@ apk add \
 # chsh -- /usr/bin/fish
 fish
 ohmyfish="https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install"
-curl "$ohmyfish" | fish
+which omf && curl "$ohmyfish" | fish
 omf install ays
 
 apk add zoxide
