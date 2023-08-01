@@ -4,7 +4,7 @@
 "   Author        : tower_town
 "   Email         : tower_town@outlook.com
 "   File Name     : lsp.vim
-"   Last Modified : 2023-07-31 21:40
+"   Last Modified : 2023-08-01 22:01
 "   Describe      : 
 "
 " ====================================================
@@ -23,3 +23,6 @@ let lspOpts = #{autoHighlightDiags: v:true}
 autocmd VimEnter * call LspOptionsSet(lspOpts)
 
 endif
+
+nnoremap <Space>d :LspDiagCurrent<CR>
+nnoremap <Space>dl :LspDiagShow<CR>
