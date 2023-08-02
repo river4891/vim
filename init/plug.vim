@@ -4,7 +4,7 @@
 "   Author        : tower_town
 "   Email         : tower_town@outlook.com
 "   File Name     : plug.vim
-"   Last Modified : 2023-08-02 23:29
+"   Last Modified : 2023-08-03 00:45
 "   Describe      : plugin list
 "
 " ====================================================
@@ -12,6 +12,7 @@
 
 call plug#begin()
 
+Plug 'tpope/vim-sensible'
 " Plug 'justmao945/vim-clang',{'for':'c'}
 Plug 'yegappan/lsp'
 Plug 'vifm/vifm.vim', {'on': 'TabVifm'}
@@ -25,7 +26,7 @@ Plug 'nine2/vim-copyright'
 Plug 'yegappan/mru'
 Plug 'junegunn/vim-peekaboo'
 
-if !has('nvim')
+if !has('nvim') && has('vim9script')
 	Plug 'Eliot00/auto-pairs'
 endif
 
