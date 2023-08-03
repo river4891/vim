@@ -4,7 +4,7 @@
 "   Author        : tower_town
 "   Email         : tower_town@outlook.com
 "   File Name     : plug.vim
-"   Last Modified : 2023-08-03 00:45
+"   Last Modified : 2023-08-03 22:04
 "   Describe      : plugin list
 "
 " ====================================================
@@ -22,7 +22,7 @@ Plug 'asins/vim-dict'
 Plug 'NoahTheDuke/vim-just', {'for':['justfile','Makefile']}
 Plug 'skywind3000/asynctasks.vim', {'on': 'AsyncTask'}
 Plug 'skywind3000/asyncrun.vim', {'on': 'AsyncRun'}
-Plug 'nine2/vim-copyright'
+Plug 'river4891/vim-copyright'
 Plug 'yegappan/mru'
 Plug 'junegunn/vim-peekaboo'
 
