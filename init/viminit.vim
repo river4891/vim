@@ -20,6 +20,8 @@ set softtabstop=4
 set noexpandtab
 set tabstop=4
 
+set termguicolors
+
 if exists("did_load_filetypes")
   finish
 endif
