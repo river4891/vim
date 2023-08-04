@@ -4,7 +4,7 @@
 "   Author        : tower_town
 "   Email         : tower_town@outlook.com
 "   File Name     : plug.vim
-"   Last Modified : 2023-08-04 11:46
+"   Last Modified : 2023-08-05 01:15
 "   Describe      : plugin list
 "
 " ====================================================
@@ -23,7 +23,7 @@ Plug 'NoahTheDuke/vim-just', {'for':['justfile','Makefile']}
 Plug 'skywind3000/asynctasks.vim', {'on': 'AsyncTask'}
 Plug 'skywind3000/asyncrun.vim', {'on': 'AsyncRun'}
 Plug 'river4891/vim-copyright'
-Plug 'yegappan/mru'
+" Plug 'yegappan/mru'
 Plug 'junegunn/vim-peekaboo'
 
 if !has('nvim') && has('vim9script')
