@@ -4,7 +4,7 @@
 "   Author        : tower_town
 "   Email         : tower_town@outlook.com
 "   File Name     : lsp.vim
-"   Last Modified : 2023-08-04 12:13
+"   Last Modified : 2023-08-04 17:12
 "   Describe      : 
 "
 " ====================================================
@@ -39,5 +39,9 @@ autocmd VimEnter * call LspOptionsSet(lspOpts)
 
 endif
 
-nnoremap <Space>d :LspDiagCurrent<CR>
-nnoremap <Space>dl :LspDiagShow<CR>
+nnoremap <silent><Space>d :LspDiagCurrent<CR>
+nnoremap <silent><Space>dl :LspDiagShow<CR>
+
+nnoremap <silent>gf :LspGotoDefinition<CR>
+nnoremap <silent>gi :LspGotoImpl<CR>
+
