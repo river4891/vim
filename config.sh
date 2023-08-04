@@ -1,4 +1,15 @@
 #!/usr/bin/env bash
+# ====================================================
+#   Copyright (C) 2023 river All rights reserved.
+#
+#   Author        : tower_town
+#   Email         : tower_town@outlook.com
+#   File Name     : config.sh
+#   Last Modified : 2023-08-04 10:22
+#   Describe      : 
+#
+# ====================================================
+
 
 vim_depd(){
 apk add \
@@ -12,6 +23,12 @@ apk add python3 py3-pip
 pip install --upgrade pip
 pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
 pip install clangd
+
+# vimlsp
+apk add nodejs-lts npm
+npm config set registry https://registry.npmmirror.com
+npm install -g vim-language-server
+npm prefix -g vim-language-server
 }
 
 alpine_add(){
