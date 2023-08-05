@@ -5,7 +5,7 @@
 #   Author        : tower_town
 #   Email         : tower_town@outlook.com
 #   File Name     : config.sh
-#   Last Modified : 2023-08-05 08:34
+#   Last Modified : 2023-08-05 11:14
 #   Describe      : 
 #
 # ====================================================
@@ -17,18 +17,22 @@ apk add \
 		just \
 		clang \
 		clang16-extra-tools
-# clangd
-apk add python3 py3-pip
-# pip conf
-pip install --upgrade pip
-pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
-pip install clangd
+# clangd in clang16-extra-tools
+
+# apk add python3 py3-pip
+# # pip conf
+# pip install --upgrade pip
+# pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
+# # options
+# pip install clangd
 
 # vimlsp
 apk add nodejs-lts npm
 npm config set registry https://registry.npmmirror.com
 npm install -g vim-language-server
-npm prefix -g vim-language-server
+npm list -g
+
+ln -s /usr/local/bin/vim-language-server /usr/bin/vimlsp
 }
 
 alpine_init(){
@@ -43,6 +47,7 @@ apk add \
 	vim \
 	git \
 	curl \
+	wget \
 	less
 
 # install docs reference: wiki.alpinelinux.com/wiki/Alpine_Linux:FAQ
@@ -68,13 +73,17 @@ fish_config(){
 apk add \
 	fish \
 	shadow
-# chsh -- /usr/bin/fish
+
+chsh -s /usr/bin/fish
 fish
-ohmyfish="https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install"
+cat <<EOF
+set ohmyfish "https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install"
 which omf && curl "$ohmyfish" | fish
 omf install ays
 
-apk add zoxide
-echo 'zoxide init fish | source' >> ~/.config/fish/config.d/z.fish
+apk add lua5.1 luajit
+git clone https://github.com/skywind3000/z.lua /usr/local/zlua
+echo 'lua /usr/local/zlua/z.lua --init fish | source' >> ~/.config/fish/conf.d/z.fish
+EOF
 }
 
