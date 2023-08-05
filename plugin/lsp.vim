@@ -46,8 +46,8 @@ def RegisterServer(): void
 		  args: ['--stdio']
 	 }]
 
-	autocmd VimEnter * call LspAddServer(vimlsp)
-	autocmd VimEnter * call LspAddServer(clanglsp)
+	exists('vimlsp') && autocmd VimEnter * call LspAddServer(vimlsp)
+	exists('clanglsp') && autocmd VimEnter * call LspAddServer(clanglsp)
 
 	var lspOpts = {autoHighlightDiags: true}
 	autocmd VimEnter * call LspOptionsSet(lspOpts)
