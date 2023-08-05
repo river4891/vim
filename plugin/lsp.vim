@@ -1,11 +1,11 @@
-" ====================================================
 vim9script
+# ====================================================
 #   Copyright (C) 2023 river All rights reserved.
 #
 #   Author        : tower_town
 #   Email         : tower_town@outlook.com
 #   File Name     : lsp.vim
-#   Last Modified : 2023-08-04 17:12
+#   Last Modified : 2023-08-06 02:12
 #   Describe      : 
 #
 # ====================================================
@@ -33,24 +33,29 @@ def RegisterServer(): void
 	var flag: bool = LspLoadFileType(ftlist)
 	if has('linux') && flag
 	var clanglsp = [{
-		  name: 'clangd',
-		  filetype: ['c', 'cpp'],
-		  path: '/usr/bin/clangd',
-		  args: ['--background-index']
+		  "name": 'clangd',
+		  "filetype": ['c', 'cpp'],
+		  "path": '/usr/bin/clangd',
+		  "arg": ['--background-index']
 	 }]
 
 	var vimlsp = [{
-		  name: 'vimlsp',
-		  filetype: ['vim'],
-		  path: '/usr/bin/vimlsp',
-		  args: ['--stdio']
+		  "name": 'vimlsp',
+		  "filetype": ['vim'],
+		  "path": '/usr/bin/vimlsp',
+		  "arg": ['--stdio']
 	 }]
+	
+	g:lspServers = {
+		"vimlsp": vimlsp,
+		"clanglsp": clanglsp,
+	}
 
-	exists('vimlsp') && autocmd VimEnter * call LspAddServer(vimlsp)
-	exists('clanglsp') && autocmd VimEnter * call LspAddServer(clanglsp)
+	autocmd VimEnter * call LspAddServer(g:lspServers['vimlsp'])
+	autocmd VimEnter * call LspAddServer(g:lspServers['clanglsp'])
 
-	var lspOpts = {autoHighlightDiags: true}
-	autocmd VimEnter * call LspOptionsSet(lspOpts)
+	g:lspOpts = {"autoHighlightDiags": true}
+	autocmd VimEnter * call LspOptionsSet(g:lspOpts)
 
 	endif
 enddef
