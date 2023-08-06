@@ -4,7 +4,7 @@
 "   Author        : tower_town
 "   Email         : tower_town@outlook.com
 "   File Name     : init.vim
-"   Last Modified : 2023-08-06 01:00
+"   Last Modified : 2023-08-06 10:01
 "   Describe      : vim config entry main()
 "
 " ====================================================
@@ -17,18 +17,18 @@ call Init.Init()
 call Plug.Init()
 
 if get(s:, 'loaded', 0) != 0
-		finish
+	finish
 else
-		let s:loaded = 1
+	let s:loaded = 1
 endif
 
 
 let s:home = fnamemodify(resolve(expand('<sfile>:p')), ':h')
 
 if has('nvim') == 1
-		exec 'set rtp+=' .. fnameescape(s:home)
+	exec 'set rtp+=' .. fnameescape(s:home)
 else
-		exec 'set rtp+=~/.vim'
+	exec 'set rtp+=~/.vim'
 endif
 
 command! -nargs=1 IncScript exec 'so ' .. fnameescape(s:home .. "/<args>")
