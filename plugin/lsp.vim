@@ -5,7 +5,7 @@ vim9script
 #   Author        : tower_town
 #   Email         : tower_town@outlook.com
 #   File Name     : lsp.vim
-#   Last Modified : 2023-08-06 02:12
+#   Last Modified : 2023-08-06 08:36
 #   Describe      : 
 #
 # ====================================================
@@ -19,7 +19,6 @@ enddef
 
 def LspLoadFileType(ftlist: list<string>): bool
 	var flag: bool = false
-	#for ftype in ['c', 'h', 'vim']
 	for ftype in ftlist
 		if &filetype == ftype
 			flag = true
@@ -32,27 +31,21 @@ def RegisterServer(): void
 	var ftlist: list<string> = ['c', 'h', 'cpp', 'vim']
 	var flag: bool = LspLoadFileType(ftlist)
 	if has('linux') && flag
-	var clanglsp = [{
+	g:lspServers = [{
 		  "name": 'clangd',
 		  "filetype": ['c', 'cpp'],
 		  "path": '/usr/bin/clangd',
-		  "arg": ['--background-index']
-	 }]
-
-	var vimlsp = [{
+		  "args": ['--background-index'],
+	 },
+	 {
 		  "name": 'vimlsp',
 		  "filetype": ['vim'],
 		  "path": '/usr/bin/vimlsp',
-		  "arg": ['--stdio']
+		  "args": ['--stdio'],
 	 }]
 	
-	g:lspServers = {
-		"vimlsp": vimlsp,
-		"clanglsp": clanglsp,
-	}
-
-	autocmd VimEnter * call LspAddServer(g:lspServers['vimlsp'])
-	autocmd VimEnter * call LspAddServer(g:lspServers['clanglsp'])
+	autocmd VimEnter * call LspAddServer(g:lspServers)
+	# autocmd VimEnter * call LspAddServer(g:lspServers['clanglsp'])
 
 	g:lspOpts = {"autoHighlightDiags": true}
 	autocmd VimEnter * call LspOptionsSet(g:lspOpts)
