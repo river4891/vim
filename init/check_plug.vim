@@ -5,7 +5,7 @@ vim9script
 #   Author        : tower_town
 #   Email         : tower_town@outlook.com
 #   File Name     : check_plug.vim
-#   Last Modified : 2023-08-05 23:27
+#   Last Modified : 2023-08-06 10:49
 #   Describe      : this script be modified from vim-plug wiki
 #   Reference     : https://github.com/junegunn/vim-plug/wiki/tips#Automatic+installation
 #
@@ -18,7 +18,7 @@ enddef
 
 def InstallVimPlug(): void
 	var vim_plug_url = 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-	var data_dir = has('nvim') ? stdpath('data') .. '/site' : has('windows') ? '$HOME/vimfiles' : '~/.vim'
+	var data_dir = has('nvim') ? stdpath('data') .. '/site' : has('linux') ? '~/.vim' : '$HOME/vimfiles'
 	var install_targe = data_dir .. '/autoload/plug.vim'
 
 	if empty(glob(install_targe))
