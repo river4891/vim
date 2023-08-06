@@ -4,14 +4,14 @@
 "   Author        : tower_town
 "   Email         : tower_town@outlook.com
 "   File Name     : init.vim
-"   Last Modified : 2023-08-06 10:01
+"   Last Modified : 2023-08-06 10:13
 "   Describe      : vim config entry main()
 "
 " ====================================================
 
 
-import "./init/index.vim" as Init
-import "./plugin/index.vim" as Plug
+import autoload "./init/index.vim" as Init
+import autoload "./plugin/index.vim" as Plug
 
 call Init.Init()
 call Plug.Init()
