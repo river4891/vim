@@ -5,7 +5,7 @@
 #   Author        : tower_town
 #   Email         : tower_town@outlook.com
 #   File Name     : config.sh
-#   Last Modified : 2023-08-05 11:14
+#   Last Modified : 2023-08-14 01:13
 #   Describe      : 
 #
 # ====================================================
@@ -74,7 +74,8 @@ apk add \
 	fish \
 	shadow
 
-chsh -s /usr/bin/fish
+echo $(which fish) | sudo tee -a /etc/shells
+chsh -s $(which fish)
 fish
 cat <<EOF
 set ohmyfish "https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install"
