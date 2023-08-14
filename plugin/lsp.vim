@@ -5,7 +5,7 @@ vim9script
 #   Author        : tower_town
 #   Email         : tower_town@outlook.com
 #   File Name     : lsp.vim
-#   Last Modified : 2023-08-06 08:36
+#   Last Modified : 2023-08-14 08:21
 #   Describe      : 
 #
 # ====================================================
@@ -57,7 +57,7 @@ def KeyMap(): void
 	nnoremap <silent><Space>d :LspDiagCurrent<CR>
 	nnoremap <silent><Space>dl :LspDiagShow<CR>
 
-	nnoremap <silent>gf :LspGotoDefinition<CR>
+	nnoremap <silent>gd :LspGotoDefinition<CR>
 	nnoremap <silent>gi :LspGotoImpl<CR>
 enddef
 
