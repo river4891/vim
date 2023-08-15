@@ -5,7 +5,7 @@
 #   Author        : tower_town
 #   Email         : tower_town@outlook.com
 #   File Name     : config.sh
-#   Last Modified : 2023-08-15 16:17
+#   Last Modified : 2023-08-16 01:25
 #   Describe      : 
 #
 # ====================================================
@@ -103,5 +103,12 @@ apk add \
 	ripgrep \
 	bat \
 	htop
+
+# dua-cli
+dua_url="https://github.com/Byron/dua-cli/releases/download/v2.20.1/dua-v2.20.1-x86_64-unknown-linux-musl.tar.gz"
+wget ${dua_url} -O /tmp/dua.tar.gz
+tar -xzf /tmp/dua.tar.gz
+mv /tmp/dua-v2.20.1-x86_64-unknown-linux-musl /opt/dua
+ln -s /opt/dua/dua /usr/bin/dua
 }
 
