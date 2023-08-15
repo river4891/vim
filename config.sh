@@ -5,7 +5,7 @@
 #   Author        : tower_town
 #   Email         : tower_town@outlook.com
 #   File Name     : config.sh
-#   Last Modified : 2023-08-14 01:13
+#   Last Modified : 2023-08-15 16:17
 #   Describe      : 
 #
 # ====================================================
@@ -76,15 +76,32 @@ apk add \
 
 echo $(which fish) | sudo tee -a /etc/shells
 chsh -s $(which fish)
-fish
 cat <<EOF
 set ohmyfish "https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install"
-which omf && curl "$ohmyfish" | fish
+which omf && fish -c "curl $ohmyfish | fish"
 omf install ays
 
 apk add lua5.1 luajit
 git clone https://github.com/skywind3000/z.lua /usr/local/zlua
 echo 'lua /usr/local/zlua/z.lua --init fish | source' >> ~/.config/fish/conf.d/z.fish
 EOF
+}
+
+fish_proxy(){
+tee -a ~/.config/fish/conf.d/proxy.fish <<'__EOF__'
+function with_fastgit
+	HTTPS_PROXY=http://127.0.0.1:38457 $argv
+end
+__EOF__
+}
+
+alter_command(){
+
+apk add \
+	exa \
+	find-fd \
+	ripgrep \
+	bat \
+	htop
 }
 

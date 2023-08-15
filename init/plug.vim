@@ -4,7 +4,7 @@
 "   Author        : tower_town
 "   Email         : tower_town@outlook.com
 "   File Name     : plug.vim
-"   Last Modified : 2023-08-05 01:15
+"   Last Modified : 2023-08-14 09:57
 "   Describe      : plugin list
 "
 " ====================================================
@@ -28,6 +28,10 @@ Plug 'junegunn/vim-peekaboo'
 
 if !has('nvim') && has('vim9script')
 	Plug 'Eliot00/auto-pairs'
+endif
+
+if !has('uninx')
+	Plug 'kaarmu/typst.vim'
 endif
 
 call plug#end()
