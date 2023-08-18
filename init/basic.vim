@@ -5,7 +5,7 @@ vim9script
 #   Author        : tower_town
 #   Email         : tower_town@outlook.com
 #   File Name     : basic.vim
-#   Last Modified : 2023-08-05 23:53
+#   Last Modified : 2023-08-18 11:35
 #   Describe      : this basic vim config
 #
 # ====================================================
@@ -38,6 +38,13 @@ export def Init(): void
 	set tabstop=4
 
 	set termguicolors
+
+	if !has('unix')
+		set shell=pwsh
+		set shellcmdflag=-cmmand
+		set shellquote=\"
+		set shellxquote=
+	endif
 
 	if exists("did_load_filetypes")
 		finish

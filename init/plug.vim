@@ -4,7 +4,7 @@
 "   Author        : tower_town
 "   Email         : tower_town@outlook.com
 "   File Name     : plug.vim
-"   Last Modified : 2023-08-14 09:57
+"   Last Modified : 2023-08-18 11:37
 "   Describe      : plugin list
 "
 " ====================================================
