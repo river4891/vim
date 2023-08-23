@@ -4,7 +4,7 @@
 "   Author        : tower_town
 "   Email         : tower_town@outlook.com
 "   File Name     : plug.vim
-"   Last Modified : 2023-08-18 11:37
+"   Last Modified : 2023-08-23 10:41
 "   Describe      : plugin list
 "
 " ====================================================
@@ -30,7 +30,7 @@ if !has('nvim') && has('vim9script')
 	Plug 'Eliot00/auto-pairs'
 endif
 
-if !has('uninx')
+if !has('linux') || !has('unix')
 	Plug 'kaarmu/typst.vim'
 endif
 

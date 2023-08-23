@@ -5,7 +5,7 @@ vim9script
 #   Author        : tower_town
 #   Email         : tower_town@outlook.com
 #   File Name     : basic.vim
-#   Last Modified : 2023-08-18 11:35
+#   Last Modified : 2023-08-23 10:49
 #   Describe      : this basic vim config
 #
 # ====================================================
@@ -39,9 +39,9 @@ export def Init(): void
 
 	set termguicolors
 
-	if !has('unix')
+	if has('win32') || has('win32unix')
 		set shell=pwsh
-		set shellcmdflag=-cmmand
+		set shellcmdflag='-NoLogo -cmmand'
 		set shellquote=\"
 		set shellxquote=
 	endif
