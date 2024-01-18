@@ -4,7 +4,7 @@
 "   Author        : tower_town
 "   Email         : tower_town@outlook.com
 "   File Name     : plug.vim
-"   Last Modified : 2023-08-23 10:41
+"   Last Modified : 2024-01-18 04:26
 "   Describe      : plugin list
 "
 " ====================================================
@@ -14,7 +14,7 @@ call plug#begin()
 
 " Plug 'tpope/vim-sensible'
 " Plug 'justmao945/vim-clang',{'for':'c'}
-Plug 'yegappan/lsp', {'for': ['c', 'h', 'vim']}
+Plug 'yegappan/lsp', {}
 Plug 'vifm/vifm.vim', {'on': 'TabVifm'}
 Plug 'mbbill/undotree', {'on': 'UndotreeToggle'}
 Plug 'pbrisbin/vim-mkdir'

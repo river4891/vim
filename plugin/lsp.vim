@@ -5,7 +5,7 @@ vim9script
 #   Author        : tower_town
 #   Email         : tower_town@outlook.com
 #   File Name     : lsp.vim
-#   Last Modified : 2023-08-14 08:21
+#   Last Modified : 2024-01-18 10:31
 #   Describe      : 
 #
 # ====================================================
@@ -30,7 +30,7 @@ enddef
 def RegisterServer(): void
 	var ftlist: list<string> = ['c', 'h', 'cpp', 'vim']
 	var flag: bool = LspLoadFileType(ftlist)
-	if has('linux') && flag
+	if has('linux') && true
 	g:lspServers = [{
 		  "name": 'clangd',
 		  "filetype": ['c', 'cpp'],
@@ -42,7 +42,23 @@ def RegisterServer(): void
 		  "filetype": ['vim'],
 		  "path": '/usr/bin/vimlsp',
 		  "args": ['--stdio'],
-	 }]
+	 },
+	 {
+		 "name": 'jdtls',
+		 "filetype": 'java',
+		 "path": '/usr/bin/jdtls',
+		 "args": [],
+		 "initializationOptions": {
+			 "settings": {
+				 "java": {
+					 "completion": {
+						 "filteredTypes": ["com.sun.*", "java.awt.*", "jdk.*", "org.graalvm.*", "sun.*", "javax.awt.*", "javax.swing.*"],
+					 },
+				 },
+			 },
+		 },
+	 }
+	]
 	
 	autocmd VimEnter * call LspAddServer(g:lspServers)
 	# autocmd VimEnter * call LspAddServer(g:lspServers['clanglsp'])
@@ -59,5 +75,6 @@ def KeyMap(): void
 
 	nnoremap <silent>gd :LspGotoDefinition<CR>
 	nnoremap <silent>gi :LspGotoImpl<CR>
+	nnoremap <silent>. :LspCodeAction<CR>
 enddef
 
