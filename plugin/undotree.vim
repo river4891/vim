@@ -5,7 +5,7 @@ vim9script
 #   Author        : tower_town
 #   Email         : tower_town@outlook.com
 #   File Name     : undotree.vim
-#   Last Modified : 2023-08-06 00:42
+#   Last Modified : 2024-01-18 04:07
 #   Describe      : 
 #
 # ====================================================
@@ -23,7 +23,7 @@ def SetUndoFile(): void
 		# create the directory and any parent directories
 		# if the location does not exist.
 		if !isdirectory(target_path)
-			call mkdir(target_path, "p", 0700)
+			call mkdir(target_path, "p", 0755)
 		endif
 
 		&undodir = target_path
