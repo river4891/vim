@@ -5,7 +5,7 @@ vim9script
 #   Author        : tower_town
 #   Email         : tower_town@outlook.com
 #   File Name     : vim-copyright.vim
-#   Last Modified : 2023-08-06 00:15
+#   Last Modified : 2024-01-19 08:00
 #   Describe      : 
 #
 # ====================================================
@@ -34,6 +34,7 @@ export def Init(): void
 		"go": "/*",
 		"vim": "\"", "vim9script": "\#",
 		"sh": "\#", "shell": "\#",
+		"java": "/*",
 	}
 
 	g:file_copyright_comment_mid_prefix_map = {
@@ -42,11 +43,13 @@ export def Init(): void
 		"go": "\#",
 		"vim": "\"", "vim9script": "\#",
 		"sh": "\#", "shell": "\#",
+		"java": "\#",
 	}
 
 	g:file_copyright_comment_end_map = {
 		"cpp": "*/", "c": "*/", "h": "*/", "hpp": "*/",
 		"go": "*/",
+		"java": "*/",
 	}
 
 enddef
